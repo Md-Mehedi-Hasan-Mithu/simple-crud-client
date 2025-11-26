@@ -67,6 +67,7 @@ const Users = ({usersPromise}) => {
                 {
                     users.map((user) => <li key={user._id}>{user.name} : {user.email}
                     <Link to={`/users/${user._id}`}>Details</Link>
+                    <Link to={`/update/${user._id}`}>Edit</Link>
                     <button onClick={()=>handleUserDelete(user._id)}>Delete</button>
                     </li>)
                 }
