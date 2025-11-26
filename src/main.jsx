@@ -9,6 +9,7 @@ import {
 } from "react-router";
 import MainLayout from './layouts/MainLayout.jsx';
 import UserDetail from './components/UserDetail.jsx';
+import StudentDetails from './components/StudentDetails.jsx';
 let router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,11 @@ let router = createBrowserRouter([
         path:'users/:id',
         loader:({params})=>fetch(`http://localhost:3000/users/${params.id}`),
         Component: UserDetail
+      },
+      {
+        path:'students/:id',
+        loader:({params})=>fetch(`http://localhost:3000/students/${params.id}`),
+        Component: StudentDetails
       }
     ]
   },
